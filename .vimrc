@@ -93,6 +93,8 @@ cnoremap <C-a> <Home>
 inoremap <C-e> <End>
 cnoremap <C-e> <End>
 
+nnoremap <A-Up> :m.-2<CR>
+nnoremap <A-Down> :m.+1<CR>
 
 set background=dark
 colorscheme quantum
