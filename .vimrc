@@ -1,8 +1,9 @@
 call plug#begin()
         Plug 'scrooloose/nerdtree'
         Plug 'vim-airline/vim-airline'
-	Plug 'hzchirs/vim-material'
+	    Plug 'hzchirs/vim-material'
         Plug 'tyrannicaltoucan/vim-quantum'
+        Plug 'justinmk/vim-syntax-extra'
 call plug#end()
 
 if !has("gui_running")
@@ -12,6 +13,18 @@ if !has("gui_running")
     let &t_AB="\e[48;5;%dm"
     let &t_AF="\e[38;5;%dm"
 endif
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+let g:airline_symbols = {}
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 syntax on
 set termguicolors
@@ -65,6 +78,9 @@ nmap <F9> :tabn 9<CR>
 nmap <F10> :tabn 10<CR>
 nmap <F11> :tabn 11<CR>
 nmap <F12> :tabn 12<CR>
+
+vnoremap <C-u> :norm xx<CR>
+vnoremap <C-c> :norm i//<CR>
 
 nnoremap <C-e> <C-w>
 
