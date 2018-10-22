@@ -39,7 +39,7 @@ set nostartofline
 set autoread
 set scrolloff=3
 set wildmenu wildignorecase wildmode=list:longest,full
-" set cursorline
+set cursorline
 set ignorecase smartcase
 set showmode showcmd
 set shortmess+=I
