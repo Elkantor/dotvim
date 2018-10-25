@@ -1,9 +1,10 @@
 call plug#begin()
         Plug 'scrooloose/nerdtree'
         Plug 'vim-airline/vim-airline'
-	    Plug 'hzchirs/vim-material'
+	Plug 'hzchirs/vim-material'
         Plug 'tyrannicaltoucan/vim-quantum'
         Plug 'justinmk/vim-syntax-extra'
+        Plug 'junegunn/fzf.vim'
 call plug#end()
 
 if !has("gui_running")
@@ -95,6 +96,10 @@ cnoremap <C-e> <End>
 
 nnoremap <A-Up> :m.-2<CR>
 nnoremap <A-Down> :m.+1<CR>
+" nnoremap <C-f> :noautocmd vimgrep<space>
+
+command -nargs=1 SearchPattern noautocmd vimgrep<space> /<args>/j **/* 
+nnoremap <C-f> :SearchPattern | :copen
 
 set background=dark
 colorscheme quantum
