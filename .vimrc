@@ -96,6 +96,8 @@ cnoremap <C-e> <End>
 
 nnoremap <A-Up> :m.-2<CR>
 nnoremap <A-Down> :m.+1<CR>
+vnoremap <A-Up> :'<','>' :m.-2<CR>
+vnoremap <A-Down> :m.+1<CR>
 " nnoremap <C-f> :noautocmd vimgrep<space>
 
 command -nargs=1 SearchPattern noautocmd vimgrep<space> /<args>/j **/* 
