@@ -77,8 +77,6 @@ nmap <F7> :tabn 7<CR>
 nmap <F8> :tabn 8<CR>
 nmap <F9> :tabn 9<CR>
 nmap <F10> :tabn 10<CR>
-nmap <F11> :tabn 11<CR>
-nmap <F12> :tabn 12<CR>
 
 vnoremap <C-u> :norm xx<CR>
 vnoremap <C-c> :norm i//<CR>
@@ -102,6 +100,10 @@ vnoremap <A-Down> :m.+1<CR>
 
 command -nargs=1 SearchPattern noautocmd vimgrep<space> /<args>/j **/* 
 nnoremap <C-f> :SearchPattern | :copen
+
+" tagbar
+
+nmap <F12> :TagbarToggle<CR>
 
 set background=dark
 colorscheme quantum
