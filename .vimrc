@@ -27,14 +27,24 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+"tagbar
+let g:tagbar_sort=1
+let g:tagbar_left=1
+let g:tagbar_width=50
+let g:tagbar_compact=1
+let g:tagbar_silent=1
+nmap <silent><F12> :TagbarToggle<CR> :set columns=140<CR>
+
 syntax on
+set wrap
+set columns=140
 set termguicolors
 set listchars=trail:.,tab:>\ ,eol:$
 set lazyredraw
 set laststatus=2
 set statusline=%-4m%f\ %y\ \ %=%{&ff}\ \|\ %{&fenc}\ [%l:%c]
 set incsearch hlsearch
-set nonumber
+set number
 set backspace=indent,eol,start
 set nostartofline
 set autoread
@@ -65,7 +75,7 @@ set noswapfile
 set ttyscroll=0
 
 
-nmap <S-T> :NERDTreeToggle<CR>
+nmap <S-T> :NERDTreeToggle<CR> :set columns=140<CR>
 nmap <S-F> :NERDTreeFocus<CR>
 nmap <F1> :tabn 1<CR>
 nmap <F2> :tabn 2<CR>
@@ -96,14 +106,15 @@ nnoremap <A-Up> :m.-2<CR>
 nnoremap <A-Down> :m.+1<CR>
 vnoremap <A-Up> :'<','>' :m.-2<CR>
 vnoremap <A-Down> :m.+1<CR>
-" nnoremap <C-f> :noautocmd vimgrep<space>
 
 command -nargs=1 SearchPattern noautocmd vimgrep<space> /<args>/j **/* 
 nnoremap <C-f> :SearchPattern | :copen
+:cclose
 
-" tagbar
+nmap <c-s> :w<CR><F12><F12>
+vmap <c-s> <Esc><c-s>gv 
+imap <c-s> <Esc><c-s>
 
-nmap <F12> :TagbarToggle<CR>
 
 set background=dark
 colorscheme quantum
